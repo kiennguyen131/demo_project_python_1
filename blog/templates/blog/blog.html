@@ -1,0 +1,10 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+  {% for post in Post %}
+  <h4>{{post.date|date:"d-m-Y"}} <a href="{% url 'post' post.id %}">{{post.title}}</a></h4>
+  <img src="{{ post.image.url }}" alt="blog" width="500px">
+  {% endfor %}
+{% endblock %}
